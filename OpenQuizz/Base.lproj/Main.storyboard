@@ -80,6 +80,7 @@
                     <connections>
                         <outlet property="activityIndicator" destination="3kL-nr-Vld" id="MUU-Gl-Kvk"/>
                         <outlet property="newGameButton" destination="k9u-gC-KLM" id="pq5-aB-q9M"/>
+                        <outlet property="questionView" destination="jKp-W7-thQ" id="DFP-ou-ZGa"/>
                         <outlet property="scoreLabel" destination="Xht-zD-d2h" id="QFC-xV-7gc"/>
                     </connections>
                 </viewController>
