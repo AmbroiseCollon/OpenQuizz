@@ -43,13 +43,13 @@ class ViewController: UIViewController {
         game.refresh()
     }
 
-    func questionsLoaded() {
+    @objc func questionsLoaded() {
         activityIndicator.isHidden = true
         newGameButton.isHidden = false
         questionView.title = game.currentQuestion.title
     }
 
-    func dragQuestionView(_ sender: UIPanGestureRecognizer) {
+    @objc func dragQuestionView(_ sender: UIPanGestureRecognizer) {
         if game.state == .ongoing {
             switch sender.state {
             case .began, .changed:

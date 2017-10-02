@@ -29,7 +29,6 @@ class QuestionManager {
     }
 
     private func parse(data: Data?) -> [Question] {
-        print(data as Any)
         guard let data = data,
             let serializedJson = try? JSONSerialization.jsonObject(with: data, options: []),
             let parsedJson = serializedJson as? [String: Any],
@@ -67,9 +66,9 @@ extension String {
             return nil
         }
 
-        let options: [String: Any] = [
-            NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
-            NSCharacterEncodingDocumentAttribute: String.Encoding.utf8.rawValue
+        let options: [NSAttributedString.DocumentReadingOptionKey: Any] = [
+            NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html,
+            NSAttributedString.DocumentReadingOptionKey.characterEncoding: String.Encoding.utf8.rawValue
         ]
 
         guard let attributedString = try? NSAttributedString(data: data, options: options, documentAttributes: nil) else {
